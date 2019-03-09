@@ -1,0 +1,54 @@
+<div class="container">
+  <h1 class='text-center'>Contact Us</h1>
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-primary text-white"><i class="fa fa-envelope"></i> Contact us.
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="processForm()" class="was-validated">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name" [(ngModel)]="name" required minlength="3" #nameInput="ngModel">
+                            <div class="help is-error invalid-feedback" *ngIf="nameInput.invalid && nameInput.dirty">
+                                Name is required and needs to be as least 3 characters long.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control is-invalid" name="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" required email #emailInput="ngModel">
+                            <div class="help is-error invalid-feedback" *ngIf="emailInput.invalid && emailInput.dirty">
+                                Needs to be a valid email.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control is-invalid" name="message" rows="6" [(ngModel)]="message" required #messageInput="ngModel"></textarea>
+                            <div class="help is-error invalid-feedback" *ngIf="messageInput.invalid && messageInput.dirty">
+                                Your message is required
+                            </div>
+                        </div>
+                        <div class="mx-auto">
+                        <button type="submit" class="btn btn-primary text-right">Submit</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4">
+            <div class="card bg-light mb-3">
+                <div class="card-header bg-success text-white text-uppercase"><i class="fa fa-home"></i> Address</div>
+                <div class="card-body">
+                    <p>Fake Street 123</p>
+                    <p>58000 CHERNOVTSY</p>
+                    <p>Ukraine</p>
+                    <p>Email : email@example.com</p>
+                    <p>Tel. +33 12 56 11 51 84</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
