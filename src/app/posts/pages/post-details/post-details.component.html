@@ -1,3 +1,60 @@
-<p>
-  post-details works!
-</p>
+<div class="container">
+    <div class="row">
+        <div class='col-md-8 offset-2'>
+            <div class="card bg-dark text-white">
+                <img src="http://zabavnik.club/wp-content/uploads/2018/02/Odinochestvo_1_06021818.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.body }}</p>  
+                    <p class="card-footer">
+                        <button class="btn btn-back" (click)='onBack()'>
+                            Back
+                        </button>
+                    </p>                       
+                </div> 
+            </div>
+            <br>
+            <div class="col-sm-12 col-xs-12">
+                <div class="comments-post">
+    
+                    <div class="single-item-title"></div>
+                    <div class="row">
+                        <ul class="comment-list">
+    
+                            <!-- comment item -->
+                            <li class="comment" *ngFor='let c of comments'>
+                                <div class="comment-user-image">
+                                    <img src="../assets/images/avatar.jpg">
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="author"><a href="#">{{ c.name }}</a></h4>
+                                    <p>{{ c.body }}</p>
+                                </div>
+                            </li>
+                            <!-- comment item -->                  
+    
+                        </ul>
+                    </div>
+    
+                </div>
+                <!-- comments-post -->
+            </div>
+    
+            <div class="col-sm-12 col-xs-12">
+                <div class="comment-respond">
+                    <h4>Add Comment</h4>
+                    <div class="form-group">
+                        <p class="comment-form-comment">
+                            <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"></textarea>
+                        </p>                        
+                    </div>  
+                    <div class="form-group">
+                        <p class="form-submit">
+                            <button (click)="commentSend(comment)" class="btn btn-secondary">Send</button> 
+                        </p>	
+                    </div>                
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

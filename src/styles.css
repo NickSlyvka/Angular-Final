@@ -9,16 +9,17 @@
   .content {
     min-height: 100%;
     margin-top: -56px;
-    margin-bottom: -290px;
-    padding-top: 60px;
+    margin-bottom: -230px;
+    padding-top: 80px;
     padding-bottom: 20px;
+    background: #e6e6e6;
     font-family: 'Times New Roman', Times, serif;
   }
 
   .content:after {
     content: "";
     display: block;
-    height: 290px;
+    height: 230px;
   }
 
   

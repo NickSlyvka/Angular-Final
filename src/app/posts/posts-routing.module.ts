@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PostsComponent } from './pages/posts.component';
-import { PostDetailsComponent } from './pages/post-details/post-details.component';
+import { PostsComponent } from './pages';
+import { PostDetailsComponent, PostDetailsGuard } from './pages';
 
 const routes: Routes = [
-  { path: '', component: PostsComponent, 
-    children : [
-      { path: 'post/:id', component: PostDetailsComponent }
-    ]
-  }
+  { path: '', component: PostsComponent},
+  { path: 'posts/:id', component: PostDetailsComponent, canActivate: [PostDetailsGuard] }  
 ];
 
 @NgModule({

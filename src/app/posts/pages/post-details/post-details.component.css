@@ -1,0 +1,99 @@
+/* Comments */
+.comment
+{
+    padding-top: 20px;
+}
+
+.comments-post ul.comment-list {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.comments-post ul.comment-list li {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.comments-post ul.comment-list ul li {
+    padding: 30px 25px;
+}
+
+.comments-post ul.comment-list li ~ li {
+    border-top: 1px solid #ececec;
+}
+
+.comments-post ul.comment-list li .comment-user-image {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    left: 25px;
+}
+
+.comments-post ul.comment-list li .comment-info {
+    display: block;
+    margin: 0 0 0 90px;
+}
+
+.comments-post ul.comment-list li .comment-info {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 0 25px;
+}
+
+.comments-post ul.comment-list ul.children .comment-info {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+}
+
+.comments-post ul.comment-list li .comment-info h4.author {
+    display: inline-block;
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.comments-post ul.comment-list li .comment-info h4.author a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+.comments-post ul.comment-list li .comment-info p {
+    display: inline-block;
+    width: 100%;
+    font-size: 13px;
+    line-height: 22px;
+    color: #606060;
+    margin: 10px 0;
+}
+
+
+.comments-post ul.comment-list li .comment-info h4.author a {
+    color: #000;
+}
+
+.comments-post ul.comment-list li .comment-info h4.author a:hover {
+    color: #c16fb6;
+}
+
+/* Back button */
+
+button.btn-back {
+    color: #c0c0c0;
+    padding-top: 200px;
+}
+
+button.btn-back:hover {
+    color: rgb(255, 255, 255);
+}

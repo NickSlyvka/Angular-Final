@@ -1,1 +1,16 @@
-Hello wordl!
+<div class="container">
+    <div class="row">
+        <div class='col-md-4' *ngFor='let post of posts | paginate: { itemsPerPage: 10, currentPage: p }'>
+            <div class="card bg-dark text-white">
+                <img src="http://zabavnik.club/wp-content/uploads/2018/02/Odinochestvo_1_06021818.jpg" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">Post #{{ post.id }}</h5>
+                    <p class="card-text">{{ post.title}}</p>     
+                    <p class="card-footer"><a [routerLink]="['/posts', post.id]" class="btn btn-info">View All</a></p>     
+                </div>                
+            </div>
+            <br>
+        </div>        
+    </div>
+    <p class="text-center paginate"><pagination-controls (pageChange)="p = $event"></pagination-controls></p>
+</div>
