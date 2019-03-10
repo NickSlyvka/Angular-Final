@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="mx-auto">
-                        <button type="submit" class="btn btn-primary text-right">Submit</button></div>
+                        <button type="submit" [disabled]="nameInput.invalid || emailInput.invalid || messageInput.invalid" class="btn btn-primary text-right">Submit</button></div>
                     </form>
                 </div>
             </div>
