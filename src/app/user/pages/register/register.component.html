@@ -1,3 +1,63 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <form class="form-horizontal" role="form" method="POST" action="/register">
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <h2 class="text-center">Register New User</h2>
+              <hr>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <div class="input-group mb-3">
+                      <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i></span></div>
+                      <input type="text" name="name" class="form-control" id="name" [(ngModel)]="user.name" #name="ngModel"
+                             placeholder="John Doe" required minlength="3">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <div class="form-group">
+                  <label for="email">E-Mail Address</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-prepend"><span class="input-group-text" id="inputEmail"><i class="fa fa-at"></i></span></div>
+                      <input type="text" name="email" class="form-control" id="email" [(ngModel)]="user.email" #email="ngModel"
+                             placeholder="you@example.com" required email>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <div class="form-group has-danger">
+                  <label for="password">Password</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-prepend"><span class="input-group-text" id="inputPassword1"><i class="fa fa-unlock-alt"></i></span></div>
+                      <input type="password" name="password" class="form-control" id="password" [(ngModel)]="user.password" #password="ngModel"
+                             placeholder="Password" required minlength="8">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <div class="form-group">
+                  <label for="password-confirm">Confirm Password</label>
+                  <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-prepend"><span class="input-group-text" id="inputPassword2"><i class="fa fa-unlock-alt"></i></span></div>
+                      <input type="password" name="confirmPassword" class="form-control" [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"
+                             id="password-confirm" placeholder="Confirm-Password" required minlength="8">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6 offset-3">
+              <p class="text-center"><button (click)="submit(user)" [disabled]="name.invalid || email.invalid || password.invalid || confirmPassword.invalid"  class="btn btn-default"><i class="fa fa-user-plus"></i> Sign-Up</button></p>
+          </div>
+      </div>
+  </form>
+</div>

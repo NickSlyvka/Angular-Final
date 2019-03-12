@@ -13,10 +13,10 @@ export class PostDetailsGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean  {
     const id = +next.url[1].path;
 
-    if (isNaN(id) || id < 1 || id > 100) {
-      this.router.navigate(['/']);
-      return false;
+    if (id <= 100) {      
+      return true;
     }
-    return true;
+    this.router.navigate(['/']);
+    return false;
   }
 }

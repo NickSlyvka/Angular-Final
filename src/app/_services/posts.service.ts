@@ -16,7 +16,7 @@ export class PostsService {
     constructor(private http: HttpClient) {}
 
     getPosts(): Observable<Posts[]> {
-        return this.http.get<Posts[]>(this.postsUrl);
+        return this.http.get<Posts[]>("api/posts/posts.json");
     }
 
     getPost(id: number): Observable<Posts> {
@@ -31,6 +31,6 @@ export class PostsService {
 
     postComments(comment: Comments) {
         const body = {body: comment.body};
-        return this.http.post('https://my-json-server.typicode.com/rikzgt/json-rest/comments', body);
+        return this.http.post('https://my-json-server.typicode.com/typicode/demo/comments', body);
     }
 }
