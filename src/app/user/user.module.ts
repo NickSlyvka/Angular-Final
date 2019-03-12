@@ -3,8 +3,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule }   from '@angular/forms';
-import {DialogModule} from 'primeng/dialog';
 import {ButtonModule} from 'primeng/button';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
 
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent, LoginSocialComponent, RegisterComponent } from './pages';
@@ -44,9 +45,10 @@ let config =  new AuthServiceConfig([
     UserRoutingModule,
     FormsModule,
     SocialLoginModule,
-    DialogModule,
+    PasswordModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule
   ],
   providers: [
     {
@@ -56,6 +58,7 @@ let config =  new AuthServiceConfig([
     ],
   exports: [
     LoginComponent,
+    LoginSocialComponent
   ]
 })
 export class UserModule { }

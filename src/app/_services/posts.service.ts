@@ -31,6 +31,6 @@ export class PostsService {
 
     postComments(comment: Comments) {
         const body = {body: comment.body};
-        return this.http.post('https://my-json-server.typicode.com/rikzgt/json-rest/comments', body);
+        return this.http.post('https://my-json-server.typicode.com/typicode/demo/comments', body);
     }
 }

@@ -25,7 +25,7 @@ export class PostDetailsComponent implements OnInit {
       this.getPost(id);
       this.postsService.getComments(id).subscribe(
         c => this.comments = c
-      )
+      );
     }
   }
 
