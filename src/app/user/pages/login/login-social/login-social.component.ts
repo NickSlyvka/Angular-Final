@@ -40,11 +40,11 @@ export class LoginSocialComponent implements OnInit {
       this.loggedIn = (user != null);
       if (user) {
         this.router.navigate(['/'])
-        localStorage.setItem('user', "username")
+        localStorage.setItem('user', JSON.stringify(user))
         return true;
       }
       else {
-        localStorage.clear();
+        localStorage.removeItem('user');
         return false;
       }
     });
