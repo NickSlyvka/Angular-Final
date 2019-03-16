@@ -24,7 +24,7 @@
 }
 
 .comments-post ul.comment-list li ~ li {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #000000;
 }
 
 .comments-post ul.comment-list li .comment-user-image {
@@ -85,6 +85,11 @@
 
 .comments-post ul.comment-list li .comment-info h4.author a:hover {
     color: #c16fb6;
+}
+
+.line {
+    border-left: 3px solid black;
+    height: 25px;
 }
 
 /* Back button */

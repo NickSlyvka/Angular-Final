@@ -27,7 +27,11 @@
                                     <img src="../assets/images/avatar.jpg">
                                 </div>
                                 <div class="comment-info">
-                                    <h4 class="author"><a href="#">{{ c.name }}</a></h4>
+                                    <div class="row">
+                                        <div class="col"><h4 class="author"><a href="#">{{ c.name }}</a></h4></div>
+                                        <div class="col"><p class="line"></p></div>
+                                        <div class="col"><h4 class="author"><a href="#">{{ c.email }}</a></h4></div>
+                                    </div>
                                     <p>{{ c.body }}</p>
                                 </div>
                             </li>
@@ -43,16 +47,30 @@
             <div class="col-sm-12 col-xs-12">
                 <div class="comment-respond">
                     <h4>Add Comment</h4>
-                    <div class="form-group">
-                        <p class="comment-form-comment">
-                            <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"></textarea>
-                        </p>                        
-                    </div>  
-                    <div class="form-group">
-                        <p class="form-submit">
-                            <button (click)="commentSend(comment)" class="btn btn-secondary">Send</button> 
-                        </p>	
-                    </div>                
+                    <form #form="ngForm">
+                            <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="name" [(ngModel)]="comment.name" placeholder="Name"
+                                            required minlength="3" >
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" class="form-control" name="email" [(ngModel)]="comment.email" placeholder="Email" 
+                                            required email>
+                                    </div>
+                                </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="comment-form-comment">
+                                <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"
+                                    required minlength="3" ></textarea>
+                            </p>                        
+                        </div>  
+                        <div class="form-group">
+                            <p class="form-submit">
+                                <button (click)="commentSend(comment); form.reset()" class="btn btn-secondary">Send</button> 
+                            </p>	
+                        </div>         
+                    </form>       
                 </div>
             </div>
         </div>        

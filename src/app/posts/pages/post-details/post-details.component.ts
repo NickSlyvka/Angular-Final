@@ -31,6 +31,8 @@ export class PostDetailsComponent implements OnInit {
 
   comment: Comments = new Comments();
 
+  // newComment: Comments;
+
   getPost(id: number) {
     this.postsService.getPost(id).subscribe(
       post => this.post = post
@@ -40,7 +42,9 @@ export class PostDetailsComponent implements OnInit {
   commentSend(comment: Comments) {
     this.postsService.postComments(comment).subscribe(
       (data: Comments) => {
-        console.log(data)
+        console.log(data);
+        this.comments.push(data);
+        // this.newComment = data
       }
     )
   }
