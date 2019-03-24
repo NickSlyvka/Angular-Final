@@ -1,3 +1,28 @@
-.card-img {
-    height: 250px;
+/* Card style */
+
+.card {
+    border: 1px solid black;
+    transition: 
+}
+.card-img-top {
+    height: 200px;
+}
+
+.card-text {
+    height: 50px;
+}
+
+hr {
+    /* height: 1px; */
+    /* color: black; */
+    border: 1px solid black;
+}
+
+/* btn style */
+.btn {
+    user-select: auto;
+}
+
+.btn-info {
+    /* background-color: #408080; */
 }

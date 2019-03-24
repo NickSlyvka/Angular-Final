@@ -1,17 +1,28 @@
 <div class="container">
     <div class="row">
         <div class='col-md-8 offset-2'>
-            <div class="card bg-dark text-white">
-                <img src="{{ post.img }}" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.body }}</p>  
+            <div class="card" >
+                <img src="{{post.img}}" class="card-img-top" alt="{{ post.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <hr>
+                    <p class="card-text">{{post.body}}</p>
                     <p class="card-footer">
-                        <button class="btn btn-back" (click)='onBack()'>
+                        <button class="btn btn-default bg-dark" (click)='onBack()'>
                             Back
                         </button>
-                    </p>                       
-                </div> 
+                        <a 
+                            [routerLink]="['/posts', post.id-1]" 
+                            *ngIf="post.id > 1">
+                            <i class="fa fa-angle-left fa-5x" aria-hidden="true"></i>
+                        </a>
+                        <a 
+                            [routerLink]="['/posts', post.id+1]" 
+                            *ngIf="post.id < 100">
+                            <i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
             </div>
             <br>
             <div class="col-sm-12 col-xs-12">
@@ -28,9 +39,9 @@
                                 </div>
                                 <div class="comment-info">
                                     <div class="row">
-                                        <div class="col"><h4 class="author"><a href="#">{{ c.name }}</a></h4></div>
+                                        <div class="col"><h4 class="author"><a>{{ c.name }}</a></h4></div>
                                         <div class="col"><p class="line"></p></div>
-                                        <div class="col"><h4 class="author"><a href="#">{{ c.email }}</a></h4></div>
+                                        <div class="col"><h4 class="author"><a>{{ c.email }}</a></h4></div>
                                     </div>
                                     <p>{{ c.body }}</p>
                                 </div>

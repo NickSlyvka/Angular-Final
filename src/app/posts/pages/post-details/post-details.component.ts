@@ -19,14 +19,17 @@ export class PostDetailsComponent implements OnInit {
               private routes: Router) { }
 
   ngOnInit() {
-    const param = this.route.snapshot.paramMap.get('id');
-    if (param) {
-      const id = +param;
-      this.getPost(id);
-      this.postsService.getComments(id).subscribe(
-        c => this.comments = c
-      );
-    }
+    // const param = this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(params => {
+      const param = params['id']; 
+      if (param) {
+        const id = +param;
+        this.getPost(id);
+        this.postsService.getComments(id).subscribe(
+          c => this.comments = c
+        );            
+      }
+    })    
   }
 
   comment: Comments = new Comments();
