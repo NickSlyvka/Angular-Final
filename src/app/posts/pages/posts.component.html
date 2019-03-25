@@ -5,8 +5,8 @@
                 <img src="{{ post.img }}" class="card-img" alt="...">
                 <div class="card-img-overlay">
                     <h5 class="card-title">Post #{{ post.id }}</h5>
-                    <p class="card-text">{{ post.title}}</p>     
-                    <p class="card-footer"><a [routerLink]="['/posts', post.id]" class="btn btn-info">View All</a></p>     
+                    <p class="card-text">{{ post.title}}</p>  
+                    <a [routerLink]="['/posts', post.id]" class='btn'>View All</a> 
                 </div>                
             </div>
             <br>

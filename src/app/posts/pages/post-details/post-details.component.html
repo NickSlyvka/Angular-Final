@@ -10,6 +10,12 @@
                         <button class="btn btn-back" (click)='onBack()'>
                             Back
                         </button>
+                        <button class="btn btn-back" *ngIf="(post.id > 1)">
+                            <a [routerLink]="['/posts', post.id-1]">Prev</a>
+                        </button>
+                        <button class="btn btn-back" *ngIf="(post.id < 100)">
+                            <a [routerLink]="['/posts', post.id+1]">Next</a>
+                        </button>
                     </p>                       
                 </div> 
             </div>

@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PostDetailsComponent implements OnInit {
 
+  private id;
   post: Posts;
   comments: Comments[] = [];
 
@@ -19,15 +20,34 @@ export class PostDetailsComponent implements OnInit {
               private routes: Router) { }
 
   ngOnInit() {
-    const param = this.route.snapshot.paramMap.get('id');
-    if (param) {
-      const id = +param;
-      this.getPost(id);
-      this.postsService.getComments(id).subscribe(
-        c => this.comments = c
-      );
-    }
+    // const param = this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe(
+      params => {
+        this.id = params.get('id');
+        const param = +this.id;      
+        // this.next(this.id);
+        // this.next(param);
+        if (param) {
+          const id = +param; 
+          // this.nextPost(id);   
+          this.getPost(id);
+          this.postsService.getComments(id).subscribe(
+            c => this.comments = c
+          );
+        }
+      }
+    )
+    
   }
+
+  // next(param: number) {
+  //   param +=1;
+  //   this.routes.navigate(['/posts']);
+  // }
+
+  // nextPost(id: number) {
+  //   this.routes.navigate(['/posts', id+1]);
+  // }
 
   comment: Comments = new Comments();
 

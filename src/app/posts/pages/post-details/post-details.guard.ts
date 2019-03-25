@@ -12,6 +12,7 @@ export class PostDetailsGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean  {
     const id = +next.url[1].path;
+    console.log(id);
 
     if (id <= 100) {      
       return true;
