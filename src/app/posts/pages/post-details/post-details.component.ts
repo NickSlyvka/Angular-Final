@@ -21,23 +21,16 @@ export class PostDetailsComponent implements OnInit {
 
   ngOnInit() {
     // const param = this.route.snapshot.paramMap.get('id');
-    this.route.paramMap.subscribe(
-      params => {
-        this.id = params.get('id');
-        const param = +this.id;      
-        // this.next(this.id);
-        // this.next(param);
-        if (param) {
-          const id = +param; 
-          // this.nextPost(id);   
-          this.getPost(id);
-          this.postsService.getComments(id).subscribe(
-            c => this.comments = c
-          );
-        }
+    this.route.params.subscribe(params => {
+      const param = params['id']; 
+      if (param) {
+        const id = +param;
+        this.getPost(id);
+        this.postsService.getComments(id).subscribe(
+          c => this.comments = c
+        );            
       }
-    )
-    
+    })    
   }
 
   // next(param: number) {
@@ -51,6 +44,8 @@ export class PostDetailsComponent implements OnInit {
 
   comment: Comments = new Comments();
 
+  // newComment: Comments;
+
   getPost(id: number) {
     this.postsService.getPost(id).subscribe(
       post => this.post = post
@@ -60,7 +55,9 @@ export class PostDetailsComponent implements OnInit {
   commentSend(comment: Comments) {
     this.postsService.postComments(comment).subscribe(
       (data: Comments) => {
-        console.log(data)
+        console.log(data);
+        this.comments.push(data);
+        // this.newComment = data
       }
     )
   }

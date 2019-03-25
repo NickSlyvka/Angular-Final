@@ -24,7 +24,7 @@
 }
 
 .comments-post ul.comment-list li ~ li {
-    border-top: 1px solid #ececec;
+    border-top: 1px solid #000000;
 }
 
 .comments-post ul.comment-list li .comment-user-image {
@@ -87,11 +87,15 @@
     color: #c16fb6;
 }
 
+.line {
+    border-left: 3px solid black;
+    height: 25px;
+}
+
 /* Back button */
 
 button.btn-back {
     color: #c0c0c0;
-    padding-top: 200px;
 }
 
 button.btn-back:hover {

@@ -1,23 +1,28 @@
 <div class="container">
     <div class="row">
         <div class='col-md-8 offset-2'>
-            <div class="card bg-dark text-white">
-                <img src="{{ post.img }}" class="card-img" alt="...">
-                <div class="card-img-overlay">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text">{{ post.body }}</p>  
+            <div class="card" >
+                <img src="{{post.img}}" class="card-img-top" alt="{{ post.title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <hr>
+                    <p class="card-text">{{post.body}}</p>
                     <p class="card-footer">
-                        <button class="btn btn-back" (click)='onBack()'>
+                        <button class="btn btn-default bg-dark" (click)='onBack()'>
                             Back
                         </button>
-                        <button class="btn btn-back" *ngIf="(post.id > 1)">
-                            <a [routerLink]="['/posts', post.id-1]">Prev</a>
-                        </button>
-                        <button class="btn btn-back" *ngIf="(post.id < 100)">
-                            <a [routerLink]="['/posts', post.id+1]">Next</a>
-                        </button>
-                    </p>                       
-                </div> 
+                        <a 
+                            [routerLink]="['/posts', post.id-1]" 
+                            *ngIf="post.id > 1">
+                            <i class="fa fa-angle-left fa-5x" aria-hidden="true"></i>
+                        </a>
+                        <a 
+                            [routerLink]="['/posts', post.id+1]" 
+                            *ngIf="post.id < 100">
+                            <i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+                        </a>
+                    </p>
+                </div>
             </div>
             <br>
             <div class="col-sm-12 col-xs-12">
@@ -33,7 +38,11 @@
                                     <img src="../assets/images/avatar.jpg">
                                 </div>
                                 <div class="comment-info">
-                                    <h4 class="author"><a href="#">{{ c.name }}</a></h4>
+                                    <div class="row">
+                                        <div class="col"><h4 class="author"><a>{{ c.name }}</a></h4></div>
+                                        <div class="col"><p class="line"></p></div>
+                                        <div class="col"><h4 class="author"><a>{{ c.email }}</a></h4></div>
+                                    </div>
                                     <p>{{ c.body }}</p>
                                 </div>
                             </li>
@@ -49,16 +58,30 @@
             <div class="col-sm-12 col-xs-12">
                 <div class="comment-respond">
                     <h4>Add Comment</h4>
-                    <div class="form-group">
-                        <p class="comment-form-comment">
-                            <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"></textarea>
-                        </p>                        
-                    </div>  
-                    <div class="form-group">
-                        <p class="form-submit">
-                            <button (click)="commentSend(comment)" class="btn btn-secondary">Send</button> 
-                        </p>	
-                    </div>                
+                    <form #form="ngForm">
+                            <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="name" [(ngModel)]="comment.name" placeholder="Name"
+                                            required minlength="3" >
+                                    </div>
+                                    <div class="col">
+                                        <input type="email" class="form-control" name="email" [(ngModel)]="comment.email" placeholder="Email" 
+                                            required email>
+                                    </div>
+                                </div>
+                        <br>
+                        <div class="form-group">
+                            <p class="comment-form-comment">
+                                <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"
+                                    required minlength="3" ></textarea>
+                            </p>                        
+                        </div>  
+                        <div class="form-group">
+                            <p class="form-submit">
+                                <button (click)="commentSend(comment); form.reset()" class="btn btn-secondary">Send</button> 
+                            </p>	
+                        </div>         
+                    </form>       
                 </div>
             </div>
         </div>        

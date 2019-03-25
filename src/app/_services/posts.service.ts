@@ -30,7 +30,7 @@ export class PostsService {
     }
 
     postComments(comment: Comments) {
-        const body = {body: comment.body};
-        return this.http.post('https://my-json-server.typicode.com/typicode/demo/comments', body);
+        const body = {name: comment.name, email: comment.email, body: comment.body};
+        return this.http.post('https://my-json-server.typicode.com/typicode/demo/comments', comment);
     }
 }

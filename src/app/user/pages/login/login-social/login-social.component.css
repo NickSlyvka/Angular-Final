@@ -16,7 +16,7 @@
   }
 
   button.btn-signout {
-    background-color: #e7a33d;
+    background-color: #808080
   }
 
   .navbar-login
@@ -46,3 +46,13 @@ img.rounded-circle {
     width: 50px;
     margin: -17px 0 -13px;
   }
+
+/* Dropdown Menu */
+
+.dropdown-menu {
+  background-color: #c0c0c0;
+}
+
+.card-image {
+  border: 2px solid black;
+}
