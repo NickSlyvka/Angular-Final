@@ -1,13 +1,13 @@
 <div class="container">
   <form class="form-horizontal" role="form" method="POST" action="/register">
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <h2 class="text-center">Register New User</h2>
               <hr>
           </div>
       </div>
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <div class="form-group">
                   <label for="name">Name</label>
                   <div class="input-group mb-3">
@@ -19,7 +19,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <div class="form-group">
                   <label for="email">E-Mail Address</label>
                   <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -31,7 +31,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <div class="form-group has-danger">
                   <label for="password">Password</label>
                   <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -43,7 +43,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <div class="form-group">
                   <label for="password-confirm">Confirm Password</label>
                   <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -55,7 +55,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-md-6 offset-3">
+          <div class="col-md-6 offset-md-3">
               <p class="text-center">
                   <button (click)="submit(user)" [disabled]="name.invalid || email.invalid || password.invalid || confirmPassword.invalid"  class="btn btn-default">
                       <i class="fa fa-user-plus"></i> Sign-Up

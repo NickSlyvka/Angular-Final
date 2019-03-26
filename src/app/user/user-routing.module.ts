@@ -6,7 +6,13 @@ import { LoginSocialGuard } from './pages/login/login-social/login-social.guard'
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent, canActivate: [LoginSocialGuard]},
+  { path: 'register', 
+    component: RegisterComponent, 
+    canActivate: [LoginSocialGuard],
+    data: {
+      breadcrumb: "Register"
+    }
+  },
 ];
 
 @NgModule({

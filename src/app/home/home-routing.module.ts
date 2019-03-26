@@ -3,8 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent, ContactComponent } from './pages';
 
 const routes: Routes = [
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent},
+  { path: 'about', 
+    component: AboutComponent,
+    data: {
+      breadcrumb: 'About'
+    } 
+  },
+  { path: 'contact', 
+    component: ContactComponent,
+    data: {
+      breadcrumb: 'Contact'
+    }
+  },
 ];
 
 @NgModule({

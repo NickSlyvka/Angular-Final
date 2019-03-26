@@ -12,16 +12,10 @@
 }
 
 hr {
-    /* height: 1px; */
-    /* color: black; */
     border: 1px solid black;
 }
 
 /* btn style */
 .btn {
     user-select: auto;
-}
-
-.btn-info {
-    /* background-color: #408080; */
 }

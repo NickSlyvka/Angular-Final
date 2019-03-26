@@ -6,11 +6,19 @@
     height: 100%;
   }
 
+  /* Style Breadcrumbs */
+  .breadcrumbs {
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Times, serif; 
+  }
+
+  /* Style Main Content */
+
   .content {
     min-height: 100%;
-    margin-top: -56px;
+    margin-top: -127px;
     margin-bottom: -229px;
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom: 20px;
     background: #e6e6e6;
     font-family: 'Times New Roman', Times, serif;
@@ -22,6 +30,7 @@
     height: 230px;
   }
   
+  /* Style form Validation */
   input.ng-touched.ng-invalid {border:solid red 2px;}
   input.ng-touched.ng-valid {border:solid green 2px;}
   

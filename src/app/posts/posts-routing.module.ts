@@ -4,9 +4,19 @@ import { PostsComponent } from './pages';
 import { PostDetailsComponent, PostDetailsGuard } from './pages';
 
 const routes: Routes = [
-  { path: 'posts', component: PostsComponent},
+  { path: 'posts', 
+    component: PostsComponent,
+    data: {
+      breadcrumb: ''
+    }
+  },
   { path: '', redirectTo: 'posts', pathMatch: 'full'},
-  { path: 'posts/:id', component: PostDetailsComponent, canActivate: [PostDetailsGuard] }  
+  { path: 'posts/:id', 
+    component: PostDetailsComponent, 
+    canActivate: [PostDetailsGuard],
+    data: {
+      breadcrumb: 'Post-detail',
+    } }  
 ];
 
 @NgModule({

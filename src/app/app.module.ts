@@ -7,10 +7,12 @@ import { HomeModule } from './home';
 import { PostsModule } from './posts';
 import { UserModule } from './user';
 import { SharedModule } from './shared';
+import { BreadcrumbComponent } from './_components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
