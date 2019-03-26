@@ -10,10 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-
-  private id;
   post: Posts;
   comments: Comments[] = [];
+  comment: Comments = new Comments();
 
   constructor(private postsService: PostsService,
               private route: ActivatedRoute,
@@ -31,20 +30,7 @@ export class PostDetailsComponent implements OnInit {
         );            
       }
     })    
-  }
-
-  // next(param: number) {
-  //   param +=1;
-  //   this.routes.navigate(['/posts']);
-  // }
-
-  // nextPost(id: number) {
-  //   this.routes.navigate(['/posts', id+1]);
-  // }
-
-  comment: Comments = new Comments();
-
-  // newComment: Comments;
+  }  
 
   getPost(id: number) {
     this.postsService.getPost(id).subscribe(
@@ -57,7 +43,6 @@ export class PostDetailsComponent implements OnInit {
       (data: Comments) => {
         console.log(data);
         this.comments.push(data);
-        // this.newComment = data
       }
     )
   }

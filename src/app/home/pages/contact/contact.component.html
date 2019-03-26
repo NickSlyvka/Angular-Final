@@ -7,27 +7,18 @@
                 <div class="card-header bg-primary text-white"><i class="fa fa-envelope"></i> Contact us.
                 </div>
                 <div class="card-body">
-                    <form (ngSubmit)="processForm()" class="was-validated">
+                    <form (ngSubmit)="processForm()">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name" [(ngModel)]="name" required minlength="3" #nameInput="ngModel">
-                            <div class="help is-error invalid-feedback" *ngIf="nameInput.invalid && nameInput.dirty">
-                                Name is required and needs to be as least 3 characters long.
-                            </div>
+                            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter name" [(ngModel)]="name" required minlength="3" #nameInput="ngModel">                            
                         </div>
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control is-invalid" name="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" required email #emailInput="ngModel">
-                            <div class="help is-error invalid-feedback" *ngIf="emailInput.invalid && emailInput.dirty">
-                                Needs to be a valid email.
-                            </div>
+                            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="email" required email #emailInput="ngModel">                            
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="form-control is-invalid" name="message" rows="6" [(ngModel)]="message" required #messageInput="ngModel"></textarea>
-                            <div class="help is-error invalid-feedback" *ngIf="messageInput.invalid && messageInput.dirty">
-                                Your message is required
-                            </div>
+                            <textarea class="form-control" name="message" rows="6" [(ngModel)]="message" placeholder="Enter message" required #messageInput="ngModel"></textarea>                            
                         </div>
                         <div class="mx-auto">
                         <button type="submit" [disabled]="nameInput.invalid || emailInput.invalid || messageInput.invalid" class="btn btn-primary text-right">Submit</button></div>

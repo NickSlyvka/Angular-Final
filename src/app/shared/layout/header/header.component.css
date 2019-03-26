@@ -1,7 +1,11 @@
-.navbar-dark {
-    background: #158cba;
+.navbar {
+    padding: .45rem 1rem;
 }
 
-.header {
-    color: red;
+.nav-item {
+    font-size: 1.1em;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffffff;
 }

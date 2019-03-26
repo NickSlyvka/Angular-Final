@@ -1,26 +1,33 @@
 <div class="container">
     <div class="row">
         <div class='col-md-8 offset-2'>
-            <div class="card" >
+            <div class="card" *ngIf="post">
                 <img src="{{post.img}}" class="card-img-top" alt="{{ post.title}}">
                 <div class="card-body">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <hr>
-                    <p class="card-text">{{post.body}}</p>
-                    <p class="card-footer">
-                        <button class="btn btn-default bg-dark" (click)='onBack()'>
-                            Back
-                        </button>
+                    <p class='text-center'>
                         <a 
-                            [routerLink]="['/posts', post.id-1]" 
-                            *ngIf="post.id > 1">
-                            <i class="fa fa-angle-left fa-5x" aria-hidden="true"></i>
+                            [routerLink]="['/posts', post.id-1]"                             
+                            class='btn btn-secondary'
+                            [class.disabled]="post.id == 1">
+                            Prev
                         </a>
+                        &nbsp;
                         <a 
                             [routerLink]="['/posts', post.id+1]" 
-                            *ngIf="post.id < 100">
-                            <i class="fa fa-angle-right fa-5x" aria-hidden="true"></i>
+                            class='btn btn-secondary'
+                            [class.disabled]="post.id == 100">
+                            Next
                         </a>
+                    </p>
+                    <hr>
+                    <h5 class="card-title text-center">{{post.title | titlecase }}</h5>
+                    <hr>
+                    <p class="card-text">{{post.body | capitalizeFirst}}</p>
+                    <hr>
+                    <p>
+                        <button class="btn btn-outline-secondary" (click)='onBack()'>
+                            Back
+                        </button>                        
                     </p>
                 </div>
             </div>
@@ -30,7 +37,7 @@
     
                     <div class="single-item-title"></div>
                     <div class="row">
-                        <ul class="comment-list">
+                        <ul class="comment-list" *ngIf="comments">
     
                             <!-- comment item -->
                             <li class="comment" *ngFor='let c of comments'>
@@ -61,24 +68,24 @@
                     <form #form="ngForm">
                             <div class="row">
                                     <div class="col">
-                                        <input type="text" class="form-control" name="name" [(ngModel)]="comment.name" placeholder="Name"
-                                            required minlength="3" >
+                                        <input type="text" class="form-control" name="name" [(ngModel)]="comment.name" placeholder="Name" #name="ngModel"
+                                            required minlength="3">
                                     </div>
                                     <div class="col">
-                                        <input type="email" class="form-control" name="email" [(ngModel)]="comment.email" placeholder="Email" 
+                                        <input type="email" class="form-control" name="email" [(ngModel)]="comment.email" placeholder="Email"  #email="ngModel"
                                             required email>
                                     </div>
                                 </div>
                         <br>
                         <div class="form-group">
                             <p class="comment-form-comment">
-                                <textarea name="comment" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"
-                                    required minlength="3" ></textarea>
+                                <textarea name="content" rows="6" class="form-control" placeholder="Text" [(ngModel)]="comment.body" aria-required="true"  #content="ngModel"
+                                    required minlength="3"></textarea>
                             </p>                        
                         </div>  
                         <div class="form-group">
                             <p class="form-submit">
-                                <button (click)="commentSend(comment); form.reset()" class="btn btn-secondary">Send</button> 
+                                <button (click)="commentSend(comment); form.reset()" [disabled]="name.invalid || email.invalid || content.invalid" class="btn btn-secondary">Send</button> 
                             </p>	
                         </div>         
                     </form>       

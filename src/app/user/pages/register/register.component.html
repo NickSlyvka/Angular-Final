@@ -56,7 +56,11 @@
       </div>
       <div class="row">
           <div class="col-md-6 offset-3">
-              <p class="text-center"><button (click)="submit(user)" [disabled]="name.invalid || email.invalid || password.invalid || confirmPassword.invalid"  class="btn btn-default"><i class="fa fa-user-plus"></i> Sign-Up</button></p>
+              <p class="text-center">
+                  <button (click)="submit(user)" [disabled]="name.invalid || email.invalid || password.invalid || confirmPassword.invalid"  class="btn btn-default">
+                      <i class="fa fa-user-plus"></i> Sign-Up
+                </button>
+            </p>
           </div>
       </div>
   </form>

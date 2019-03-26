@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class PostsService {
-    private postsUrl = 'https://jsonplaceholder.typicode.com/posts';
+    private postComment = 'https://my-json-server.typicode.com/typicode/demo/comments';
     private commentsUrl = 'https://jsonplaceholder.typicode.com/comments?postId=';
 
     constructor(private http: HttpClient) {}
@@ -31,6 +31,6 @@ export class PostsService {
 
     postComments(comment: Comments) {
         const body = {name: comment.name, email: comment.email, body: comment.body};
-        return this.http.post('https://my-json-server.typicode.com/typicode/demo/comments', comment);
+        return this.http.post(this.postComment, body);
     }
 }

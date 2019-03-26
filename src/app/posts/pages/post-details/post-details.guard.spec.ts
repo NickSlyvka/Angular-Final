@@ -2,7 +2,7 @@ import { TestBed, async, inject } from '@angular/core/testing';
 
 import { PostDetailsGuard } from './post-details.guard';
 
-describe('PostDetailsGuard', () => {
+describe('PostDetails.ComponentGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [PostDetailsGuard]

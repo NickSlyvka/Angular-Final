@@ -4,7 +4,8 @@ import { PostsComponent } from './pages';
 import { PostDetailsComponent, PostDetailsGuard } from './pages';
 
 const routes: Routes = [
-  { path: '', component: PostsComponent},
+  { path: 'posts', component: PostsComponent},
+  { path: '', redirectTo: 'posts', pathMatch: 'full'},
   { path: 'posts/:id', component: PostDetailsComponent, canActivate: [PostDetailsGuard] }  
 ];
 

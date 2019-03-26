@@ -1,3 +1,13 @@
+/* Button prev&next */
+p.text-center {
+    margin: -12px 0;
+}
+
+a.btn-secondary:focus {
+    outline: 0px;
+    box-shadow: none;
+}
+
 /* Comments */
 .comment
 {
@@ -92,12 +102,3 @@
     height: 25px;
 }
 
-/* Back button */
-
-button.btn-back {
-    color: #c0c0c0;
-}
-
-button.btn-back:hover {
-    color: rgb(255, 255, 255);
-}
