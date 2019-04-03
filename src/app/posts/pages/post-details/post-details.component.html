@@ -7,16 +7,18 @@
                     <p class='text-center'>
                         <a 
                             [routerLink]="['/posts', post.id-1]"                             
-                            class='btn btn-secondary'
+                            class='btn btn-outline-secondary'
                             [class.disabled]="post.id == 1">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
                             Prev
                         </a>
                         &nbsp;
                         <a 
                             [routerLink]="['/posts', post.id+1]" 
-                            class='btn btn-secondary'
+                            class='btn btn-outline-secondary'
                             [class.disabled]="post.id == 100">
                             Next
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                         </a>
                     </p>
                     <hr>
@@ -78,7 +80,13 @@
                         </div>  
                         <div class="form-group">
                             <p class="form-submit">
-                                <button (click)="commentSend(comment); form.reset()" [disabled]="name.invalid || email.invalid || content.invalid" class="btn btn-secondary">Send</button> 
+                                <button 
+                                    (click)="commentSend(comment); form.reset()" 
+                                    [disabled]="name.invalid || email.invalid || content.invalid"
+                                    [ngClass]="{'fa fa-ban': name.invalid || email.invalid || content.invalid}" 
+                                    class="btn btn-secondary">
+                                    Send
+                                </button> 
                             </p>	
                         </div>         
                     </form>       

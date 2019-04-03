@@ -21,7 +21,14 @@
                             <textarea class="form-control" name="message" rows="6" [(ngModel)]="message" placeholder="Enter message" required #messageInput="ngModel"></textarea>                            
                         </div>
                         <div class="mx-auto">
-                        <button type="submit" [disabled]="nameInput.invalid || emailInput.invalid || messageInput.invalid" class="btn btn-primary text-right">Submit</button></div>
+                            <button 
+                                type="submit" 
+                                [disabled]="nameInput.invalid || emailInput.invalid || messageInput.invalid" 
+                                class="btn btn-primary text-right"
+                                [ngClass]="{'fa fa-ban': nameInput.invalid || emailInput.invalid || messageInput.invalid}">
+                                Submit
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
