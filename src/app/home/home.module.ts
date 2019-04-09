@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { AboutComponent, ContactComponent } from './pages';
-import { PostsModule } from '../posts';
 
 
 @NgModule({
@@ -16,8 +15,7 @@ import { PostsModule } from '../posts';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    FormsModule,
-    PostsModule   
+    FormsModule  
   ]
 })
 export class HomeModule { }
