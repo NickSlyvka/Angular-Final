@@ -1,0 +1,10 @@
+<div class="card">
+    <img src="{{ post.img }}" class="card-img-top" alt="{{ post.id }}">
+    <div class="card-body">
+        <h5 class="card-title">Post #{{ post.id }}</h5>
+        <hr>
+        <p class="card-text">{{ post.title | capitalizeFirst }}</p>
+        <hr>
+        <p><a [routerLink]="['/posts', post.id]" class="btn btn-outline-primary">View All</a></p> 
+    </div>
+</div>

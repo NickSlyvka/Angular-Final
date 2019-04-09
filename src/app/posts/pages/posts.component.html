@@ -1,16 +1,7 @@
 <div class="container">
-    <div class="row">        
+    <div class="row">
         <div class='col-md-4' *ngFor='let post of posts | paginate: { itemsPerPage: 12, currentPage: p }'>
-            <div class="card">
-                <img src="{{ post.img }}" class="card-img-top" alt="{{ post.id }}">
-                <div class="card-body">
-                    <h5 class="card-title">Post #{{ post.id }}</h5>
-                    <hr>
-                    <p class="card-text">{{ post.title | capitalizeFirst }}</p>
-                    <hr>
-                    <p><a [routerLink]="['/posts', post.id]" class="btn btn-outline-primary">View All</a></p> 
-                </div>
-            </div>
+            <post-data [post]="post"></post-data>
             <br>
         </div>
     </div>

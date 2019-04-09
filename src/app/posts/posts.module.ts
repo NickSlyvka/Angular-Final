@@ -5,14 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { PostsRoutingModule } from './posts-routing.module';
-import { PostsComponent, PostDetailsComponent } from './pages';
+import { PostsComponent, PostDetailsComponent, PostDetailComponent, PostComponent } from './pages';
 import { FormsModule } from '@angular/forms';
 import { CapitalizeFirstPipe } from '../_pipes/capitalizefirst.pipe';
 
 @NgModule({
   declarations: [
     PostsComponent,
+    PostComponent,
     PostDetailsComponent,
+    PostDetailComponent,
     CapitalizeFirstPipe
   ],
   imports: [
@@ -21,6 +23,9 @@ import { CapitalizeFirstPipe } from '../_pipes/capitalizefirst.pipe';
     HttpClientModule,
     FormsModule,
     NgxPaginationModule
+  ],
+  exports: [
+    PostComponent
   ]
 })
 export class PostsModule { }
